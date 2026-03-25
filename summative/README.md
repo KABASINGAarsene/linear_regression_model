@@ -42,9 +42,4 @@ flutter run
 
 ---
 
-## Rubric Compliance Highlights
-- **Linear Regression Plot:** See `linear_regression/scatter_sqft_energy.png` for the fitted regression line.
-- **Model Comparison:** Three models (SGD, Decision Tree, Random Forest) are trained; the best one is serialized.
-- **Retraining Endpoint:** The API supports `/retrain` to update the model in real-time as new data is streamed.
-- **Pydantic Validation:** Strict range constraints (e.g., Temperature -30°C to 55°C) are enforced at the API level.
-- **CORS:** Securely configured origin handling in `main.py`.
+
