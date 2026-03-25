@@ -1,13 +1,13 @@
 # Energy Consumption Predictor — Python Backend & Flutter App
 
-## Mission Description (Task 1)
+## Mission Description 
 Our mission is to optimize residential energy usage through intelligent prediction. This system forecasts monthly consumption (kWh) based on square footage, occupancy, and climate data. By identifying energy-intensive patterns, users can reduce costs and utilities can enhance grid sustainability.
 
-### Public API Endpoint (Task 2)
+### Public API Endpoint 
 - **Live Swagger UI:** [https://energy-api-sgov.onrender.com/docs]
 - **Base Prediction URL:** `https://energy-api-sgov.onrender.com/predict`
 
-### Video Demo (Task 4)
+### Video Demo 
 - **YouTube Link:** [https://youtu.be/AcxNG_aEP64]
 
 
