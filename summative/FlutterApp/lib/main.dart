@@ -15,14 +15,9 @@ const _textDark     = Color(0xFF111827);
 const _textMuted    = Color(0xFF6B7280);
 
 // ─── API base URL ─────────────────────────────────────────────────────────────
-// TODO: Replace with your Render URL (e.g. 'https://energy-api.onrender.com')
-// for the final submission.
+// Updated with your live Render URL
 String get _baseUrl {
-  if (kIsWeb) return 'http://localhost:8000';
-  try {
-    if (Platform.isAndroid) return 'http://10.0.2.2:8000';
-  } catch (_) {}
-  return 'http://localhost:8000';
+  return 'https://energy-api-sgov.onrender.com';
 }
 
 void main() {
