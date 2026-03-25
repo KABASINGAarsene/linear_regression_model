@@ -1,45 +1,41 @@
 # Energy Consumption Predictor — Python Backend & Flutter App
 
-## Mission: Residential Energy Optimization
-The objective of this project is to build an intelligent system that predicts residential energy consumption based on environmental and usage factors. By understanding these patterns, homeowners can optimize their appliance usage and local governments can better forecast grid demand.
+## Mission Description (Task 1)
+Our mission is to optimize residential energy usage through intelligent prediction. This system forecasts monthly consumption (kWh) based on square footage, occupancy, and climate data. By identifying energy-intensive patterns, users can reduce costs and utilities can enhance grid sustainability.
 
-### Dataset Description
-- **Source:** Residential Energy Dataset (Synthetic patterns based on real-world consumption indices).
-- **Volume:** ~1,000+ records of residential energy logs.
-- **Features:** 
-    - `Square Footage`: Total living area (continuous).
-    - `Number of Occupants`: People residing (integer).
-    - `Appliances Used`: Count of active appliances (integer).
-    - `Average Temperature`: Outdoor temp in °C (continuous).
-    - `Day of Week`: Binary (0 for Weekday, 1 for Weekend).
-- **Target:** `Energy Consumption` in kWh.
+### Public API Endpoint (Task 2)
+- **Live Swagger UI:** [https://energy-api-sgov.onrender.com/docs]
+- **Base Prediction URL:** `https://energy-api-sgov.onrender.com/predict`
+
+### Video Demo (Task 4)
+- **YouTube Link:** [https://youtu.be/AcxNG_aEP64]
+
 
 ---
 
-## Project Structure
-- `linear_regression/`: Contains the `multivariate.ipynb` training notebook and saved `.pkl` artifacts.
-- `API/`: FastAPI implementation providing prediction and retraining endpoints.
-- `FlutterApp/`: Beautiful sustainability-themed mobile app with real-time predictions.
+## Technical Details
+
+### Dataset & Models
+- **Source:** Residential Energy Logs (regressive analysis).
+- **Features:** Sq-Ft, Occupants, Appliances, Temperature, Day Type.
+- **Models:** SGDRegressor, Decision Tree, and **Random Forest (Best Performance)**.
+
+### API Features
+- **Validation:** Pydantic models with strict range constraints (e.g. Temp -30°C to 55°C).
+- **Security:** CSRF-protected/CORS restricted origin handling in `main.py`.
+- **Dynamic Updates:** `/retrain` endpoint for model hot-swapping.
 
 ---
 
-## Getting Started
+## How to Run Project
 
-### 1. API Setup
-```bash
-cd API
-pip install -r requirements.txt
-uvicorn main:app --host 0.0.0.0 --port 8000
-```
-- **Swagger Documentation:** [http://localhost:8000/docs](http://localhost:8000/docs)
+### 1. Run Mobile App (Flutter)
+1. Ensure Flutter is installed.
+2. `cd FlutterApp`
+3. `flutter pub get`
+4. `flutter run`
 
-### 2. Flutter App Setup
-```bash
-cd FlutterApp
-flutter pub get
-flutter run
-```
-
----
-
-
+### 2. Run API Locally (Optional)
+1. `cd API`
+2. `pip install -r requirements.txt`
+3. `uvicorn main:app --reload`
